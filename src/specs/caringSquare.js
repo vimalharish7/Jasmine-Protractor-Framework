@@ -1,18 +1,25 @@
-let homePage = require('../lib/homePage.js');
+let commonClass = require('../lib/commonClass.js');
+let registerPage = require('../lib/registerPage.js');
+let sampleData = require('../data/dataValue.js');
 
-describe('User Story 1: As a User, I should be able to find Places of Interest so that I can work on planning activities.', function () {
-    it('1.1 User able to Navigate to Places List from navigation bar.', function () {
-
-        homePage.homePage.launchUrl('https://caringsquaredeployment.azurewebsites.net/');
-        homePage.homePage.waitForObject(homePage.homePage.registerLink);
+describe('Test Case 1', function () {
+    it('1.1 Launch the Home Page', function () {
+        commonClass.commonClass.launchUrl('https://caringsquaredeployment.azurewebsites.net/');
+        commonClass.commonClass.waitForObject(commonClass.commonClass.homePageLink);
     });
-    it('1.2 User is able to view the list of places with details such as Name, Address, Type of place and its category of interest.', function () { });
-    it('1.3 User is able to view the exact location by clicking on a place in map.', function () {
-        
-        expect(homePage.homePage.registerLink.isPresent()).toBe(true);
-        browser.actions().mouseMove(homePage.homePage.registerLink).click().perform();
-        browser.sleep(5000);
+    it('1.2 Navigate to User Registration Page', function () {
+        commonClass.commonClass.clickOnObject(commonClass.commonClass.registerLink);
+        commonClass.commonClass.waitForDisplayedObject(registerPage.registerPage.registerHeader);
+        var name = sampleData.dataValue.userName;
+        console.log(name);
+        registerPage.registerPage.completeRegistration(sampleData.dataValue.userName, sampleData.dataValue.password);
+        commonClass.commonClass.waitForDisplayedObject(registerPage.registerPage.userNameTakenError);
+        registerPage.registerPage.completeRegistration("", sampleData.dataValue.password);
+        commonClass.commonClass.waitForDisplayedObject(registerPage.registerPage.successMessage);
+    });
+    it('', function () {
+    
      });
-    it('1.4 User is able to view additional places by navigating to other pages of the table.', function () { });
+    it('', function () { });
 });
 

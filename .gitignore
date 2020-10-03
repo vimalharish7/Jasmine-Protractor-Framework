@@ -26,3 +26,4 @@ src/Reports/screenshots/fonts/glyphicons-halflings-regular.ttf
 src/Reports/screenshots/fonts/glyphicons-halflings-regular.woff
 src/Reports/screenshots/fonts/glyphicons-halflings-regular.woff2
 src/Reports/screenshots/report.html
+*.json

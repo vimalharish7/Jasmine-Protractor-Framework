@@ -1,7 +1,8 @@
 module.exports = {
-    "dataValue" :[{
-        "userName" : "harish1150@gmail.com",
+
+    "dataValue" :{
+        "userName" : "harish@gmail.com",
         "userName1" : "ronaldo8870@gmail.com",
-        "password" : "Ronaldo8870!"
-    }]
+        "password" : "Harish8870!"
+    }
 }
